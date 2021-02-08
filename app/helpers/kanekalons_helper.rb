@@ -1,0 +1,2 @@
+module KanekalonsHelper
+end

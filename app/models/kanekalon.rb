@@ -1,0 +1,2 @@
+class Kanekalon < ApplicationRecord
+end
