@@ -1,5 +1,6 @@
-<h2>Все</h2>
+<h2 class="text-center">Все цвета канекалона:</h2>
 <% @kanekalons.each do |kanekalon| %>
-  <p><%= kanekalon.hex %></p>
+  <div style="width: 50px; height: 50px; background-color: <%= kanekalon.hex %>"></div>
   <p><%= kanekalon.color_name %></p>
 <% end %>
+
