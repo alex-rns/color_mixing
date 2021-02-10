@@ -4,3 +4,6 @@
   <p><%= kanekalon.color_name %></p>
 <% end %>
 
+<%= form_with model: @kanekalon do |form| %>
+  <%= form.collection_select(:color_name, @kanekalons, :color_name, :color_name) %>
+<% end %>
