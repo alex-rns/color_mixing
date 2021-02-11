@@ -1,7 +1,6 @@
 <h2 class="text-center">Все цвета канекалона:</h2>
 <% @kanekalons.each do |kanekalon| %>
   <div style="width: 50px; height: 50px; background-color: <%= kanekalon.hex %>"></div>
-  <p><%= kanekalon.color_name %></p>
+  <p><%= link_to kanekalon.color_name, kanekalon_path(kanekalon) %></p>
 <% end %>
 
-<%= link_to "MIX", kanekalons_mixing_path %>

@@ -1,0 +1,13 @@
+<h2><%= @kanekalon.color_name %></h2>
+
+<%= form_with url: kanekalon_path, method: :get do |form| %>
+  <%= form.radio_button :manufacture, "Kami" %>
+  <%= form.label :manufacture, "Kami" %>
+  <%= form.radio_button :manufacture, "Jumbo" %>
+  <%= form.label :manufacture, "Jumbo" %>
+  <%= form.radio_button :manufacture, "Aida" %>
+  <%= form.label :manufacture, "Aida" %>
+  <%= form.submit %>
+<% end %>
+
+<p><%= @single_page_result %></p>
