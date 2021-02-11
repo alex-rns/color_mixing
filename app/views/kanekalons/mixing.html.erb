@@ -1,0 +1,12 @@
+<%= form_with url: kanekalons_mixing_path, method: :get do |form| %>
+  <%= form.radio_button :manufacture, "Kami" %>
+  <%= form.label :manufacture, "Kami" %>
+  <%= form.radio_button :manufacture, "Jumbo" %>
+  <%= form.label :manufacture, "Jumbo" %>
+  <%= form.select :color_name, @kanekalons.map { |c| [c.color_name, c.color_name, { 'style' => "background-color:" + c.hex + ";"}]}, {}, { :class => 'form-select form-select-lg' }%>
+  <%= form.submit %>
+<% end %>
+<p>Chosen color: <%= @result_color.hex  if @result_color.present?%></p>
+
+<%= @result %>
+<%#= @result_color %>
