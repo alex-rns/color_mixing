@@ -1,6 +1,7 @@
-<h2 class="text-center">Все цвета канекалона:</h2>
+<h2 class="text-center pb-4">Доступная палитра цветов:</h2>
 <% @kanekalons.each do |kanekalon| %>
-  <div style="width: 50px; height: 50px; background-color: <%= kanekalon.hex %>"></div>
-  <p><%= link_to kanekalon.color_name, kanekalon_path(kanekalon) %></p>
+  <%= link_to kanekalon_path(kanekalon), class: "text-decoration-none text-reset" do %>
+    <div class="d-inline-flex justify-content-center align-items-center color-hover" style="width: 220px; height: 80px; background-color: <%= kanekalon.hex %>"><span class="bg-white p-1 invisible"><%= kanekalon.color_name %></span></div>
+  <% end %>
 <% end %>
 

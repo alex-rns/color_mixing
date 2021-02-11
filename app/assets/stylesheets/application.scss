@@ -13,3 +13,9 @@
  *= require_self
  */
 @import 'bootstrap';
+
+.color-hover:hover {
+  span {
+    visibility: visible!important;
+  }
+}

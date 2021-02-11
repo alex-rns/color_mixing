@@ -1,13 +1,21 @@
-<h2><%= @kanekalon.color_name %></h2>
+<h2 class="text-center pb-4"><%= @kanekalon.color_name %></h2>
+<div class="row">
+  <div class="col-6 text-center">
+    <h3>Выбери производителя</h3>
+    <%= form_with url: kanekalon_path, method: :get do |form| %>
+      <%= form.radio_button :manufacture, "Kami" %>
+      <%= form.label :manufacture, "Kami" %>
+      <%= form.radio_button :manufacture, "Jumbo" %>
+      <%= form.label :manufacture, "Jumbo" %>
+      <%= form.radio_button :manufacture, "Aida" %>
+      <%= form.label :manufacture, "Aida" %>
+      <%= form.submit "Mix", class: "btn btn-success d-block w-100" %>
+    <% end %>
+  </div>
+  <div class="col-6" style="width: 50%; background-color: <%= @kanekalon.hex %>"></div>
+</div>
 
-<%= form_with url: kanekalon_path, method: :get do |form| %>
-  <%= form.radio_button :manufacture, "Kami" %>
-  <%= form.label :manufacture, "Kami" %>
-  <%= form.radio_button :manufacture, "Jumbo" %>
-  <%= form.label :manufacture, "Jumbo" %>
-  <%= form.radio_button :manufacture, "Aida" %>
-  <%= form.label :manufacture, "Aida" %>
-  <%= form.submit %>
-<% end %>
-
-<p><%= @single_page_result %></p>
+<div class="text-center pt-5">
+  <h3>Инструкция по смешке:</h3>
+  <p><%= @single_page_result %></p>
+</div>
