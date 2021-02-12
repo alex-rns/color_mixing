@@ -1,17 +1,17 @@
 <nav class="navbar navbar-dark sticky-top bg-dark flex-md-nowrap p-0 shadow">
-  <%= link_to "Kanekalon Mix Helper", home_path, class: "navbar-brand col-md-3 col-lg-2 mr-0 px-3", id: "colored" %>
-  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <%= link_to "Kanekalon Mix Helper", home_path, class: "navbar-brand col-md-3 col-lg-2 mr-4 px-3 fs-3 text-center", id: "colored" %>
+
   <%= form_with url: search_kanekalons_path, method: :get, local: true, class: "form-floating d-flex w-100" do |form| %>
     <%= form.text_field :query, id: :query, data: { autocomplete_source: kanekalons_path }, class: "form-control query", placeholder: "Search" %>
     <%= form.label :query, "Search" %>
-    <%= form.submit "Go!", class: "btn btn-primary" %>
   <% end %>
   <ul class="navbar-nav px-3">
     <li class="nav-item text-nowrap">
       <a class="nav-link" href="#">link</a>
     </li>
   </ul>
+  <button class="navbar-toggler position-absolute d-md-none collapsed" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
 </nav>
 
