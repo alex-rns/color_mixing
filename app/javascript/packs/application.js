@@ -8,6 +8,16 @@ import Turbolinks from "turbolinks"
 import * as ActiveStorage from "@rails/activestorage"
 import "channels"
 
+import './kanekalons.js'
+
+document.addEventListener("turbolinks:load", function() {
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+        $('[data-toggle="popover"]').popover()
+    })
+})
+
+import "jquery-ui/ui/widgets/autocomplete"
 Rails.start()
 Turbolinks.start()
 ActiveStorage.start()

@@ -1,6 +1,11 @@
 class KanekalonsController < ApplicationController
   def index
-    @kanekalons = Kanekalon.all
+    # searching with autocomplete
+    @kanekalons = Kanekalon.order(:color_name).where('color_name ilike ?', "%#{params[:term]}%")
+    respond_to do |format|
+      format.html
+      format.json { render json: @kanekalons.map(&:color_name) }
+    end
   end
 
   def show
@@ -15,5 +20,10 @@ class KanekalonsController < ApplicationController
                           else
                             @kanekalon.default_mix
                           end
+  end
+
+  def search
+    @kanekalons = Kanekalon.where('color_name ILIKE ? OR hex ILIKE ?', "%#{params[:query]}%", "%#{params[:query]}%")
+    render 'kanekalons/index'
   end
 end
