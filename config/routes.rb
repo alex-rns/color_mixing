@@ -1,8 +1,7 @@
 Rails.application.routes.draw do
   root 'kanekalons#index', as: 'home'
 
-  # TODO: limit kanekalons resourses
-  resources :kanekalons do
+  resources :kanekalons, only: [:index, :show] do
     get "search", on: :collection
   end
 end
